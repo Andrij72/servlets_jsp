@@ -1,15 +1,12 @@
 package com.andrkul;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.util.Date;
-
 /**
  * Simple class that implements interface {@link Filter}.
  *
- * @author A.Kulynych
- */
+*/
 public class FilterDemo implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
     }
