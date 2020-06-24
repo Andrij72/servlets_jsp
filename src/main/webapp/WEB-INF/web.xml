@@ -3,29 +3,60 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <display-name>Servlets APP</display-name>
+    <filter>
+        <filter-name>FilterDemo</filter-name>
+        <filter-class>com.andrkul.FilterDemo</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterDemo</filter-name>
+        <url-pattern>/filterDemo</url-pattern>
+    </filter-mapping>
     <servlet>
-        <servlet-name>main-servlet</servlet-name>
-        <servlet-class>com.andrkul.MainServlet</servlet-class>
+        <servlet-name>SimpleServlet</servlet-name>
+        <servlet-class>com.andrkul.SimpleServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>main-servlet</servlet-name>
-        <url-pattern>/my-servlet</url-pattern>
-    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ErrorDemo</servlet-name>
+        <servlet-class>com.andrkul.ErrorDemo</servlet-class>
+    </servlet>
 
     <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>/static/*</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>jsp-servlet</servlet-name>
-        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>jsp-servlet</servlet-name>
-        <url-pattern>*.jsp</url-pattern>
+        <servlet-name>SimpleServlet</servlet-name>
+        <url-pattern>/SimpleServlet</url-pattern>
     </servlet-mapping>
 
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+
+    <servlet-mapping>
+        <servlet-name>ErrorDemo</servlet-name>
+        <url-pattern>/ErrorDemo</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErrorDemo</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Error</exception-type>
+        <location>/ErrorDemo</location>
+    </error-page>
+
+    <servlet>
+        <servlet-name>SessionTrackingDemo</servlet-name>
+        <servlet-class>com.andrkul.SessionTrackingDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionTrackingDemo</servlet-name>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CookieDemo</servlet-name>
+        <servlet-class>com.andrkul.CookieDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieDemo</servlet-name>
+        <url-pattern>/CookieDemo</url-pattern>
+    </servlet-mapping>
 </web-app>
